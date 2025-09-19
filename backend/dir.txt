@@ -1,0 +1,36 @@
+chat-backend/
+├── app/
+│   ├── __init__.py
+│   ├── main.py                # FastAPI 앱 엔트리포인트
+│   ├── database.py            # DB 연결 설정
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── config.py          # 설정 관리 (Pydantic)
+│   │   ├── security.py        # JWT 토큰 / 비밀번호 해싱
+│   │   └── deps.py            # 의존성 주입
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── user.py            # 사용자 모델
+│   │   ├── room.py            # 채팅방 모델
+│   │   ├── room_member.py     # 방-사용자 관계 모델
+│   │   ├── message.py         # 메시지 모델
+│   │   └── message_reaction.py# 메시지 리액션 모델
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   ├── user.py            # Pydantic 스키마 (User)
+│   │   ├── room.py            # Pydantic 스키마 (Room)
+│   │   └── message.py         # Pydantic 스키마 (Message)
+│   ├── routers/
+│   │   ├── __init__.py
+│   │   ├── auth.py            # 인증 API (회원가입, 로그인, 프로필)
+│   │   ├── users.py           # 사용자 관리 API
+│   │   ├── rooms.py           # 채팅방 API (생성, 참여, 나가기, 삭제)
+│   │   ├── websocket.py       # WebSocket 라우터
+│   │   └── ws.py              # 실시간 메시징/Presence 로직
+│   └── utils/
+│       ├── __init__.py
+│       └── websocket_manager.py # WebSocket 연결 관리 유틸리티
+├── alembic/                   # DB 마이그레이션 폴더 (추가 예정)
+├── requirements.txt           # Python 패키지 의존성
+├── .env                       # 환경 변수 (DB, JWT 설정 등)
+└── .gitignore                 # .env, __pycache__ 등 제외

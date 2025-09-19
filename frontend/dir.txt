@@ -1,0 +1,84 @@
+chat-frontend/
+├── app/
+│   ├── layout.tsx                 # 루트 레이아웃 (Provider, Theme 포함)
+│   ├── page.tsx                   # 기본 진입 페이지
+│   └── globals.css                # 전역 스타일
+│
+├── components/
+│   ├── chat-app.tsx               # 채팅 메인 컨테이너
+│   ├── chat-header.tsx            # 채팅방 상단 헤더
+│   ├── message-list.tsx           # 메시지 출력 컴포넌트
+│   ├── message-input.tsx          # 메시지 입력창
+│   ├── typing-indicator.tsx       # 입력중 표시
+│   ├── RoomMembersPanel.tsx       # 참여자 목록 패널
+│   ├── sidebar.tsx                # 사이드바 (채팅방 목록/사용자 목록)
+│   ├── theme-provider.tsx         # 다크/라이트 모드 Provider
+│   ├── notification-permission-banner.tsx
+│   ├── notification-settings.tsx
+│   │
+│   ├── auth/                      # 인증 관련 컴포넌트
+│   │   ├── auth-screen.tsx        # 로그인/회원가입 화면
+│   │   ├── login-form.tsx         # 로그인 폼
+│   │   └── register-form.tsx      # 회원가입 폼
+│   │
+│   ├── modals/                    # 모달 UI
+│   │   ├── create-room-modal.tsx  # 방 생성 모달
+│   │   ├── edit-message-modal.tsx # 메시지 수정 모달
+│   │   ├── message-search-modal.tsx
+│   │   ├── profile-settings-modal.tsx
+│   │   ├── room-info-modal.tsx
+│   │   └── user-profile-modal.tsx
+│   │
+│   └── ui/                        # shadcn/ui 기반 UI 컴포넌트
+│       ├── button.tsx
+│       ├── avatar.tsx
+│       ├── badge.tsx
+│       ├── dropdown-menu.tsx
+│       ├── input.tsx
+│       ├── textarea.tsx
+│       ├── toast.tsx
+│       ├── tooltip.tsx
+│       ├── accordion.tsx
+│       ├── dialog.tsx
+│       ├── sheet.tsx
+│       ├── table.tsx
+│       ├── tabs.tsx
+│       ├── switch.tsx
+│       ├── progress.tsx
+│       └── ... (기타 UI 요소들)
+│
+├── contexts/
+│   ├── auth-context.tsx           # 인증 상태 Context
+│   ├── chat-context.tsx           # 채팅 상태 Context (WebSocket 관리)
+│   └── notification-context.tsx   # 알림 설정 Context
+│
+├── hooks/
+│   ├── use-mobile.ts              # 반응형 훅
+│   ├── use-real-time-simulation.ts# 실시간 시뮬레이션 훅
+│   └── use-toast.ts               # 토스트 알림 훅
+│
+├── lib/
+│   ├── api.ts                     # API 클라이언트 (백엔드 연동)
+│   └── utils.ts                   # 공용 유틸
+│
+├── types/
+│   └── chat.ts                    # 타입 정의 (User, Room, Message 등)
+│
+├── utils/
+│   ├── time-formatting.ts         # 시간 포맷팅 유틸
+│   └── validation.ts              # 입력값 검증 유틸
+│
+├── public/
+│   ├── placeholder-logo.png
+│   ├── placeholder-user.jpg
+│   └── ... (이미지/아이콘)
+│
+├── styles/
+│   └── globals.css                # 전역 스타일 (app/globals.css와 통합 가능)
+│
+├── .gitignore
+├── package.json
+├── pnpm-lock.yaml
+├── tsconfig.json
+├── postcss.config.mjs
+└── next.config.mjs
